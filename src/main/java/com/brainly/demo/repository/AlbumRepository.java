@@ -9,5 +9,5 @@ import java.util.List;
 
 @RepositoryRestResource(collectionResourceRel = "Album", path = "albums")
 public interface AlbumRepository extends PagingAndSortingRepository<Album, Long> {
-    List<Album> findAlbumByAlbumId(@Param("id") String id);
+    List<Album> findAlbumByAlbumId(@Param("id") Long id);
 }

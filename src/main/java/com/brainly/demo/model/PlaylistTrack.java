@@ -1,15 +1,14 @@
 package com.brainly.demo.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
-public class PlaylistTrack {
+public class PlaylistTrack implements Serializable {
+
   @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
   private long playlistId;
+  @Id
   private long trackId;
 
 
@@ -21,7 +20,6 @@ public class PlaylistTrack {
     this.playlistId = playlistId;
   }
 
-
   public long getTrackId() {
     return trackId;
   }
@@ -29,5 +27,4 @@ public class PlaylistTrack {
   public void setTrackId(long trackId) {
     this.trackId = trackId;
   }
-
 }

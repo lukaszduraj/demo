@@ -13,7 +13,7 @@ public class Employee {
   private String lastName;
   private String firstName;
   private String title;
-  private long reportsTo;
+  private Long reportsTo;
   private java.sql.Timestamp birthDate;
   private java.sql.Timestamp hireDate;
   private String address;

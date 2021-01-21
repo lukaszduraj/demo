@@ -1,25 +1,26 @@
 package com.brainly.demo.model;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
 public class Album {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long albumId;
+    private Long albumId;
     private String title;
-    private long artistId;
+    private Long artistId;
 
-
-    public long getAlbumId() {
+    public Long getAlbumId() {
         return albumId;
     }
 
-    public void setAlbumId(long albumId) {
+    public void setAlbumId(Long albumId) {
         this.albumId = albumId;
     }
-
 
     public String getTitle() {
         return title;
@@ -29,13 +30,11 @@ public class Album {
         this.title = title;
     }
 
-
-    public long getArtistId() {
+    public Long getArtistId() {
         return artistId;
     }
 
-    public void setArtistId(long artistId) {
+    public void setArtistId(Long artistId) {
         this.artistId = artistId;
     }
-
 }
