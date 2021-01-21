@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class AppMVCController {
 
-    @RequestMapping(value = "/")
+    @RequestMapping(value = "/app")
     public String index(){
-        return "index";
+        return "app";
     }
 
 }
