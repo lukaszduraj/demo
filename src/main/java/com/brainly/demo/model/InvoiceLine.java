@@ -1,12 +1,28 @@
 package com.brainly.demo.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import lombok.*;
+import lombok.experimental.Accessors;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+
 @Entity
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@Data
+@Accessors(chain = true)
+@JsonIgnoreProperties(ignoreUnknown = true)
+@EqualsAndHashCode(callSuper = false)
+@Builder(toBuilder = true)
+@NoArgsConstructor
+@AllArgsConstructor
+@Setter
+@Getter
 public class InvoiceLine {
 
     @Id
@@ -16,50 +32,4 @@ public class InvoiceLine {
     private long trackId;
     private String unitPrice;
     private long quantity;
-
-
-    public long getInvoiceLineId() {
-        return invoiceLineId;
-    }
-
-    public void setInvoiceLineId(long invoiceLineId) {
-        this.invoiceLineId = invoiceLineId;
-    }
-
-
-    public long getInvoiceId() {
-        return invoiceId;
-    }
-
-    public void setInvoiceId(long invoiceId) {
-        this.invoiceId = invoiceId;
-    }
-
-
-    public long getTrackId() {
-        return trackId;
-    }
-
-    public void setTrackId(long trackId) {
-        this.trackId = trackId;
-    }
-
-
-    public String getUnitPrice() {
-        return unitPrice;
-    }
-
-    public void setUnitPrice(String unitPrice) {
-        this.unitPrice = unitPrice;
-    }
-
-
-    public long getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(long quantity) {
-        this.quantity = quantity;
-    }
-
 }
